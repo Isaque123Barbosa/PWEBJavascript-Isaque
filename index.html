@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function iniciarJogo(){
+            let escolha_computador = escolhaComputador();
+            let escolha_usuario = escolhaUsuario();
+            while(true){
+                // 1 = Pedra
+                // 2 = Papel
+                // 3 = Tesoura
+                
+                
+                if(escolha_usuario == "PEDRA"){
+                    if(escolha_computador == 1){
+                        alert("Ambos colocaram pedra, deu empate!")
+                    }
+                    else if(escolha_computador == 2){
+                        alert("O computador colocou papel, você perdeu!")
+                    }
+                    else{
+                        alert("O computador colocou tesoura, você ganhou!")
+                    }
+                }
+                else if(escolha_usuario == "PAPEL"){
+                    if(escolha_computador == 1){
+                        alert("O computador colocou pedra, você ganhou!")
+                    }
+                    else if(escolha_computador == 2){
+                        alert("Ambos colocaram papel, deu empate!")
+                    }
+                    else{
+                        alert("O computador colocou tesoura, você perdeu!")
+                    }
+                }
+                else if(escolha_usuario == "TESOURA"){
+                    if(escolha_computador == 1){
+                        alert("O computador colocou pedra, você perdeu!")
+                    }
+                    else if(escolha_computador == 2){
+                        alert("O computador colocou papel, você ganhou!")
+                    }
+                    else{
+                        alert("Ambos colocaram tesoura, deu empate!")
+                    }
+                }
+                else{
+                    alert("Informe uma jogada válida")
+                    break;
+                }
+                let resposta = prompt("Deseja encerrar o jogo? Sim ou Não");
+                if(resposta.toUpperCase() == "SIM"){
+                    break;
+                }
+            }
+        }
+
+        function escolhaComputador(){
+            let escolha_computador = Math.floor(Math.random()*3)+1;
+            return escolha_computador;
+        }
+
+        function escolhaUsuario(){
+            let escolha_usuario = prompt("Escreva a jogada que deseja executar: (Pedra, Papel ou Tesoura)");
+            return escolha_usuario.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="iniciarJogo()">Jogo Pedra, Papel e Tesoura</button>
+</body>
+</html>
