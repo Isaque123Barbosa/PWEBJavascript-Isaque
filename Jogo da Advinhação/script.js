@@ -1,5 +1,5 @@
 function gerarNumero(){
-    let numero_computador = Math.floor(Math.random()*101)+1;
+    let numero_computador = Math.floor(Math.random()*100)+1;
     return numero_computador;
 }
 
