@@ -1,28 +1,28 @@
 function palavraAleatoria() {
     let palavras = ["casa", "carro", "comida", "trabalho", "escola", "tempo", "dinheiro", "gente", "amigo", "família", "amor", "telefone", "mesa", "cadeira", "porta", "café", "livro", "sapato", "roupa", "viagem", "janela", "luz", "estrada", "ônibus", "chave"];
     
-    // Correção: falta os parênteses após Math.random()
+    
     let indicePalavra = Math.floor(Math.random() * palavras.length);
     
     return palavras[indicePalavra];
 }
 
 function verificarPalavra(letra, palavra, palavraEscondida) {
-    let novaPalavra = palavraEscondida.split(""); // Transforma em array para editar por índice
+    let novaPalavra = palavraEscondida.split(""); 
 
     for (let i = 0; i < palavra.length; i++) {
         if (palavra[i] == letra) {
-            novaPalavra[i] = letra; // Corrigido: = ao invés de ==
+            novaPalavra[i] = letra; 
         }
     }
 
-    return novaPalavra.join(""); // Retorna como string novamente
+    return novaPalavra.join(""); 
 }
 
 function jogoDaForca() {
     while (true) {
         let palavraForca = palavraAleatoria();
-        let palavraEscondida = "_".repeat(palavraForca.length); // Correção: "*" não funciona para string
+        let palavraEscondida = "_".repeat(palavraForca.length); 
         let tentativas = 6;
 
         while (true) {
